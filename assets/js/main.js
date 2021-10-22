@@ -26,6 +26,71 @@ una lista di membri di un team. */
 // Ciascun membro del team avrá come caratteristica name, role, image (https://picsum.photos/images)
 //stampare tutto in console 
 //esempio Esempio
-/*  nome: Ben Green
+/* const user1 {
+    nome: Ben Green
     role: CEO
-    image: https://picsum.photos/id/1025/300/300 */
+    image: https://picsum.photos/id/1025/300/300
+} */
+
+
+/* fonte ruoli 
+    https://help.tableau.com/current/blueprint/it-it/bp_project_team_roles_responsibilities.htm
+*/
+
+/* var nameArray = [
+    firstElementArray = {
+        chiave1: 'valore',
+        chiave2: 'valore',
+        chiave3: 'valore'
+    },
+    firstElementArray = {
+        chiave1: 'valore',
+        chiave2: 'valore',
+        chiave3: 'valore'
+    }
+]; */
+let userPlaceToPrint = document.querySelector('.userTeam');
+
+//creazione della lista dei membri del team
+let nameUser;
+let roleUser;
+let imageUser;
+
+const team = [
+    firstElement = {
+        name: 'JANET WELCH',
+        role: 'CEO',
+        image: 'https://picsum.photos/id/1025/300/300'
+    },
+    secondElement = {
+        name: 'DOUGLAS WELCH',
+        role: 'CIO',
+        image: 'https://picsum.photos/id/1025/300/300'
+    },
+    thirdElement = {
+        name: 'DANNY SHARP',
+        role: 'Analytics Director',
+        image: 'https://picsum.photos/id/1025/300/300'
+    },
+    fourthElement = {
+        name: 'RHONDA BROWN ',
+        role: 'Data Engineer',
+        image: 'https://picsum.photos/id/1025/300/300'
+    }
+]
+
+
+for (let index = 0; index < team.length; index++) {
+    const element = team[index];
+    /* console.log(element); */
+    for (const key in element) {
+        if (key == 'name') {
+            nameUser = element[key]
+        } else if (key == 'role') {
+            roleUser = element[key]
+        } else {
+            imageUser = element[key]
+        }
+    }
+    console.log(nameUser, roleUser, imageUser);
+}
