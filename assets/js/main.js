@@ -49,12 +49,13 @@ una lista di membri di un team. */
         chiave3: 'valore'
     }
 ]; */
-let userPlaceToPrint = document.querySelector('.userTeam');
+/* riempi in modo dinamico queste card */
 
-//creazione della lista dei membri del team
-let nameUser;
-let roleUser;
-let imageUser;
+const containerCard = document.querySelector('.container')
+    //creazione della lista dei membri del team
+    /* let nameUser;
+    let roleUser;
+    let imageUser; */
 
 const team = [
     firstElement = {
@@ -79,7 +80,6 @@ const team = [
     }
 ]
 
-
 for (let index = 0; index < team.length; index++) {
     const element = team[index];
     /* console.log(element); */
@@ -92,5 +92,17 @@ for (let index = 0; index < team.length; index++) {
             imageUser = element[key]
         }
     }
-    console.log(nameUser, roleUser, imageUser);
+    let user_index = [nameUser, roleUser, imageUser]
+    console.log(user_index);
+    const divCard = `<div class="col d-flex justify-content-center">
+                    <div class="card" style="width: 18rem;">
+                        <img src="${imageUser}" class="card-img-top">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-uppercase">${nameUser}</h5>
+                            <p class="card-text ">${roleUser}</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
+                        </div>
+                    </div>
+                </div>`
+    containerCard.innerHTML += divCard
 }
